@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>リンク集</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="G:\共有ドライブ\J-11-おじ尾島透弥\課題\エンジニアコース\JS\補助教材\style.css">
+</head>
+<body>
+<header>
+    <h1>リンク集</h1>
+</header>
+<main>
+    <label for="siteName">タイトルを入力してください</label>
+    <input type="text" id="siteName">
+    <label for="siteUrl">URLを入力してください</label>
+    <input type="url" id="siteUrl" >
+    <button type="submit" id="submit">追加する</button>
+</main>
+<table id="siteList">
+    <!-- ここに追加データが挿入される -->
+</table>
+
+<script>
+$("#submit").on("click",function(){
+const key = $("#siteName").val();
+const value = $("#siteUrl").val();
+localStorage.setItem(key,value);
+const html = '<tr><td><a href="' + value + '" target="_blank">' + key + '</a></td></tr>';
+$("#siteList").append(html);
+});
+
+
+
+
+</script>
+</body>
+</html>
