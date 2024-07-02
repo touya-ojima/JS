@@ -23,6 +23,13 @@
 </table>
 
 <script>
+// 文字列が入った変数名.match(特定の文字列のパターン)
+// 以下をコピペして使ってみてください
+if (url.match(/^(http|https):\/\//)) {
+  // 含まれている場合の処理
+} else {
+  // 含まれていない場合の処理
+}
 $("#submit").on("click",function(){
 const key = $("#siteName").val();
 const value = $("#siteUrl").val();
